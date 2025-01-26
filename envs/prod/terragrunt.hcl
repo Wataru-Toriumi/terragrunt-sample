@@ -7,7 +7,7 @@ terraform {
 }
 
 inputs = {
-  bucket_name          = "my-prod-bucket"
+  bucket_name          = "my-prod-terragrunt-sample-bucket"
   lambda_function_name = "my-prod-lambda"
   lambda_runtime       = "python3.9"
   s3_events            = ["s3:ObjectCreated:*", "s3:ObjectRemoved:*"]

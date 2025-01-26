@@ -69,8 +69,6 @@ data "archive_file" "lambda_zip" {
     filename = "lambda_function.py"
   }
 
-  # output_base64sha256 を使えば、source_code_hash に直接使用できる
-  output_base64sha256 = true
   output_path = "${path.root}/tmp/lambda_function.zip"
 }
 
@@ -79,7 +77,6 @@ data "archive_file" "lambda_zip" {
 ##############################
 resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
-  # バケットポリシーやバージョニング、暗号化設定など必要に応じて追加
 }
 
 ##############################
